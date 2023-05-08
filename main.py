@@ -99,17 +99,6 @@ async def video_handler(message: types.Message):
 @dp.message_handler(content_types=['sticker'])
 async def sticker_handler(message: types.Message):
     sticker = message.sticker
-    # if sticker.is_animated:
-    #     file_id = sticker.file_id
-    #     file_path = f'animated_stickers/{file_id}.tgs'
-    #     await sticker.download(file_path) # сохраняем стикер в директорию stickers
-    #     # отправляем стикер в канал
-    #     with open(file_path, 'rb') as sticker_file1:
-    #         try:
-    #             await bot.send_animation(chat_id='айди канала', animation=sticker_file1)
-    #             await message.answer("✅ <b>Стикер был успешно отправлен в канал!</b>", parse_mode='HTML')
-    #         except:
-    #             await message.answer("❌ <b>Произошла ошибка при отправке стикера. Попробуйте еще раз.</b>", parse_mode='HTML')
     file_id = sticker.file_id
     file_path = f'stickers/{file_id}.webp'
     await sticker.download(file_path) # сохраняем стикер в директорию stickers
